@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo2.css"/>
+    <title>ChatBot Page</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" width="170" height="60" />
+            </div>
+            <ul class="links">
+                <li><a href="https://concibot.gtifadba.com.br/">Home</a></li>
+                <li><a href="http://www.conceicaodafeira.ba.gov.br/blog/">Notícias</a></li>
+                <li><a href="http://www.conceicaodafeira.ba.gov.br/secretarias/">Secretarias</a></li>
+                <li><a href="http://www.conceicaodafeira.ba.gov.br/ouvidoria/">Ouvidoria</a></li>
+            </ul>
+            <a href="https://www.pmconceicaodafeira.transparenciaoficialba.com.br/pagina.php?ref=home" class="action_btn">Saiba mais</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="https://concibot.gtifadba.com.br/">Home</a></li>
+            <li><a href="http://www.conceicaodafeira.ba.gov.br/blog/">Notícias</a></li>
+            <li><a href="http://www.conceicaodafeira.ba.gov.br/secretarias/">Secretarias</a></li>
+            <li><a href="http://www.conceicaodafeira.ba.gov.br/ouvidoria/">Ouvidoria</a></li>
+            <li><a href="https://www.pmconceicaodafeira.transparenciaoficialba.com.br/pagina.php?ref=home" class="action_btn">Saiba mais</a></li>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Bem Vindo ao ConciBot</h1>
+            <p>Localize o botão de chat no canto inferior direito da página.</p>
+        </section>
+    </main>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+        
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+        
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  chat-icon="https:&#x2F;&#x2F;i.imgur.com&#x2F;fVEr82H.png"
+  intent="WELCOME"
+  chat-title="ConciBot"
+  agent-id="d4318258-63bb-4978-b124-b556261ce12e"
+  language-code="pt-br"
+></df-messenger>
+</body>
+</html>
